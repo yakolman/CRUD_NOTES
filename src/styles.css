@@ -1,0 +1,107 @@
+:root {
+  font-family: Arial, Helvetica, sans-serif;
+  font-synthesis: none;
+  color: #000;
+  background: #fff;
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; min-width: 320px; background: #fff; }
+button, textarea { font: inherit; }
+button { cursor: pointer; }
+
+.app { padding: 18px 28px 30px; }
+.title-row { display: flex; align-items: center; gap: 16px; margin-bottom: 31px; }
+.title-row h1 { margin: 0; font-size: 32px; line-height: 40px; font-weight: 400; }
+.refresh-button {
+  width: 38px;
+  height: 38px;
+  padding: 0;
+  border: 1px solid black;
+  border-radius: 50%;
+  background: white;
+  display: grid;
+  place-items: center;
+}
+.refresh-icon { display: block; color: #0bba31; }
+.spinning { animation: spin 1s linear infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }
+
+.notes-section { margin-bottom: 38px; }
+.notes-grid { display: flex; flex-wrap: wrap; column-gap: 48px; row-gap: 35px; }
+.note-card {
+  width: 244px;
+  height: 176px;
+  padding: 22px;
+  border: 1px solid black;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.note-content {
+  margin: 0;
+  text-align: center;
+  font-size: 12px;
+  line-height: 28px;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  max-height: 100%;
+  overflow-y: auto;
+}
+.delete-button {
+  position: absolute;
+  right: -19px;
+  top: -19px;
+  width: 38px;
+  height: 38px;
+  border: 1px solid black;
+  border-radius: 50%;
+  background: white;
+  padding: 0;
+  font-size: 32px;
+  line-height: 30px;
+  color: #ff3434;
+  display: grid;
+  place-items: center;
+}
+
+.note-form { width: 345px; max-width: 100%; }
+.form-label { display: block; margin-left: 12px; margin-bottom: 11px; font-size: 12px; }
+.textarea-wrapper { position: relative; width: 100%; height: 117px; }
+.note-form textarea {
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 12px 58px 12px 12px;
+  resize: vertical;
+  border: 1px solid black;
+  border-radius: 0;
+  background: white;
+  color: black;
+  outline-offset: 2px;
+}
+.add-button {
+  position: absolute;
+  right: 10px;
+  bottom: 7px;
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  padding: 0;
+  border: 1px solid black;
+  border-radius: 50%;
+  background: white;
+  color: black;
+}
+button:disabled { cursor: not-allowed; opacity: .55; }
+.loading-text { margin: 0; font-size: 12px; }
+.error-message { color: #b00000; font-size: 13px; margin: 0 0 22px; }
+
+@media (max-width: 620px) {
+  .notes-grid { gap: 35px 25px; }
+}
+@media (max-width: 320px) {
+  .app { padding: 18px 16px 30px; }
+}
